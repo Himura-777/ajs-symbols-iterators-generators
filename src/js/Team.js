@@ -8,24 +8,24 @@ export default class Team {
 	}
 
 	//Задание 1
-	// [Symbol.iterator]() {
-	// 	const membersArray = Array.from(this.members);
-	// 	let index = 0;
+	[Symbol.iterator]() {
+		const membersArray = Array.from(this.members);
+		let index = 0;
 
-	// 	return {
-	// 		next() {
-	// 			if (index < membersArray.length) {
-	// 				return { value: membersArray[index++], done: false };
-	// 			}
-	// 			return { done: true };
-	// 		},
-	// 	};
-	// }
+		return {
+			next() {
+				if (index < membersArray.length) {
+					return { value: membersArray[index++], done: false };
+				}
+				return { done: true };
+			},
+		};
+	}
 
 	//Задание 2
-	*[Symbol.iterator]() {
-		for (const member of this.members) {
-			yield member;
-		}
-	}
+	// *[Symbol.iterator]() {
+	// 	for (const member of this.members) {
+	// 		yield member;
+	// 	}
+	// }
 }
